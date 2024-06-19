@@ -1,0 +1,56 @@
+:root {
+    --review-icon-height: 100px;
+    --review-gap: 10px;
+    --review-name-height: 50px;
+    --review-star-height: 50px;
+}
+
+.review {
+    display: flex;
+    grid-gap: 20px;
+    padding: 60px 20px;
+}
+
+.review > div {
+    max-height: 300px;
+    overflow: hidden;
+    width: 400px;
+    padding: 20px;
+    grid-gap: var(--review-gap);
+    color: #000;
+    border-radius: 6px;
+    background-color: #FFF;
+    display: grid;
+    grid-template-columns: var(--review-icon-height) 1fr;
+    grid-template-rows: calc(var(--review-name-height) - var(--review-gap)/2)
+                        calc(var(--review-star-height) - var(--review-gap)/2)
+                        auto;
+    grid-template-areas: "ICON NAME"
+                         "ICON STAR"
+                         "NOTE NOTE";
+}
+
+.review > div h2 {margin: 0}
+
+.review > div .icon {
+    grid-area: ICON;
+    height: var(--review-icon-height);
+    aspect-ratio: 1/1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.review > div .name {
+    grid-area: NAME;
+}
+
+.review > div .star {
+    grid-area: STAR;
+}
+
+.review > div .note {
+    grid-area: NOTE;
+}
+
+
