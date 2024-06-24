@@ -6,16 +6,15 @@
 }
 
 .review {
-    display: flex;
+    display: grid;
     grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
     padding: 60px 20px;
 }
 
 .review > div {
-    max-height: 300px;
     overflow: hidden;
-    width: 400px;
-    padding: 20px;
+    padding: 24px 16px;
     grid-gap: var(--review-gap);
     color: #000;
     border-radius: 6px;
@@ -54,3 +53,9 @@
 }
 
 
+/* Мобильная версия */
+@media (orientation: portrait) {
+    .review {
+        grid-template-columns: 1fr;
+    }
+}

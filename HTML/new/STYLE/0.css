@@ -1,8 +1,13 @@
+:root {
+    --main-color: #7967CD;
+}
+
 *,
 *::after,
 *::before {
     box-sizing: border-box;
 }
+
 
 html,
 body {
@@ -39,6 +44,8 @@ footer {
 
 }
 
+
+/* Мобильная версия */
 @media (orientation: portrait) {
     .wrapper {width: 100%}
 }
