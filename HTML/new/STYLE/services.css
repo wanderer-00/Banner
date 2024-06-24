@@ -25,6 +25,13 @@
 /* Мобильная версия */
 @media (orientation: portrait) {
     .services {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Версия для миниатюрных смартфонов */
+@media (width: 500px) {
+    .services {
         grid-template-columns: 1fr;
     }
 }
