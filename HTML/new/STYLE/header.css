@@ -1,53 +1,77 @@
+:root {
+    --header-height: 100px;
+}
+
 header > .wrapper > div {
+    height: 100px;
+    margin: 20px 20px 50px 20px;
     display: grid;
     grid-gap: 0 20px;
     grid-template-columns: auto 1fr auto;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: calc(var(--header-height)/2) calc(var(--header-height)/2);
     grid-template-areas: "Hlogo Hcity Hbutn"
                          "Hlogo Hstrt Hbutn";
     align-items: center;
 /*    border: 1px solid red*/
 }
 
-header .butn {
-    grid-area: Hbutn;
-    
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-items: right;
-    justify-items: center
-    
+
+
+header .box {
+    display: inline-flex;
+    height: 100%;
+    aspect-ratio: 1/1;
+    background-image: url('../IMG/header/logo.svg');
 }
 
-header > .wrapper > div > .butn > a {
+
+/* Кнопки: заказы, купить, войти */
+header .butn {
     height: 100px;
-    margin: 0 20px;
+    display: grid;
+    grid-gap: 20px;
+    grid-area: Hbutn;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+header > .wrapper > div > .butn > a
+{
     aspect-ratio: 1/1;
-/*    border: 5px solid orange;*/
     text-align: center;
-    border: 3px solid transparent;
     border-radius: 6px;
-    padding: 10px;
+    --butn-height: 60px;
+    height: var(--butn-height);
+    background-color: var(--main-color);
+    margin: calc( ( var(--header-height) - var(--butn-height) ) / 2 ) 0;
     
-    &:hover {
-        border: 3px solid var(--main-color);
+    &:hover
+    {
+        box-shadow: 0 5px 10px rgba(128,128,128, .75);
     }
 }
 
-header .butn .icon {
+header .butn .icon
+{
+    fill: #FFF;
     height: 100%;
     aspect-ratio: 1/1;
-    fill: var(--main-color);
-    
-/*    border: 1px solid blue*/
 }
 
 header .logo {
+    height: 100%;
     grid-area: Hlogo;
+    font-size: 54px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
 }
 
 header .city {
     grid-area: Hcity;
+}
+
+header .city > svg {
+    height: 40px;
 }
 
 header .strt {

@@ -17,6 +17,20 @@
 .column3 div:nth-child(2) {grid-area: c}
 .column3 div:nth-child(3) {grid-area: q}
 
+/*
+.column3 div:nth-child(3) {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.column3 div:nth-child(3) a {
+    padding: 4px 6px;
+    border-radius: 6px;
+    grid-gap: 20px;
+    border: 1px solid var(--main-color);
+}
+*/
+
 footer h2 {
     white-space: nowrap
 }
@@ -37,13 +51,11 @@ hr {
     margin: 20px auto;
 }
 
+
+
+
 .copyright_links {padding: 0px 20px}
 
-footer ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
 
 .copyright_links {
     display: grid;
@@ -62,11 +74,16 @@ footer ul {
 }
 
 .link {
+    fill: var(--main-color);
     --link-height: 40px;
-
     height: var(--link-height);
-    aspect-ratio: 1/1;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+    border-radius: 4px;
 }
+
+#ok {padding: 7px}
+
+#wh {padding: 6px}
+
+#tg {padding: 8px 6px}
+
+#vk {padding: 10px 4px}

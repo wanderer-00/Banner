@@ -1,37 +1,50 @@
 .services {
-    width: 100%;
-    padding: 20px;
+    margin: 50px 20px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 50px 30px;
-    
+    grid-gap: 20px;
+    grid-template-rows: repeat(3, 200px);
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: "banner banner sticker sticker portable portable"
+                         "banner banner poster  sign    portable portable"
+                         "banner banner cutting milling milling  design"
+    ;
 }
 
-.services .icon {
+.services > div {
     width: 100%;
-    aspect-ratio: 4/3;
-    border-radius: 12px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
-.services .name {
+    height: 100%;
+    border-radius: 10px;
+    background-color: #999;
+    background-blend-mode: normal;
     text-align: center;
-    font-size: 1.5rem;
-    padding: 12px 0;
-}
+    vertical-align: middle;
 
-/* Мобильная версия */
-@media (orientation: portrait) {
-    .services {
-        grid-template-columns: 1fr 1fr;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: background-blend-mode 2s ease-out 1000ms;
+
+
+    &:hover {
+        background-blend-mode: multiply;
+        background-size: 110%;
     }
 }
 
-/* Версия для миниатюрных смартфонов */
-@media (width: 500px) {
-    .services {
-        grid-template-columns: 1fr;
-    }
-}
+.services > div:nth-child(1) {grid-area: banner}
+.services > div:nth-child(2) {grid-area: sticker}
+.services > div:nth-child(3) {grid-area: portable}
+.services > div:nth-child(4) {grid-area: poster}
+.services > div:nth-child(5) {grid-area: sign}
+.services > div:nth-child(6) {grid-area: cutting}
+.services > div:nth-child(7) {grid-area: milling}
+.services > div:nth-child(8) {grid-area: design}
+
+.services > div:nth-child(1) {background-image: url(../IMG/services/1.jpg)}
+.services > div:nth-child(2) {background-image: url(../IMG/services/2.jpg)}
+.services > div:nth-child(3) {background-image: url(../IMG/services/3.png)}
+.services > div:nth-child(4) {background-image: url(../IMG/services/1.jpg)}
+.services > div:nth-child(5) {background-image: url(../IMG/services/1.jpg)}
+.services > div:nth-child(6) {background-image: url(../IMG/services/1.jpg)}
+.services > div:nth-child(7) {background-image: url(../IMG/services/1.jpg)}
+.services > div:nth-child(8) {background-image: url(../IMG/services/1.jpg)}

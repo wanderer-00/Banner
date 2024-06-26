@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Баннеры</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="calc_box">
+            <h1>Баннеры</h1>
+
+
+
+            <div class="material"></div>
+
+
+
+            <div class="size">
+                <h2>Размер</h2>
+                <input type="number" value="" placeholder="Высота (см)">
+                <input type="number" value="" placeholder="Ширина (см)">
+            </div>
+
+
+
+            <div class="quality">
+                <h2>Качество печати</h2>
+                <fieldset>
+                    <legend>Качество печати</legend>
+
+                    <div>
+                        <input type="radio" id="DPI360" name="DPI360" value="360" />
+                        <label for="DPI360">360 DPI</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="DPI720" name="DPI720" value="720" />
+                        <label for="DPI720">720 DPI</label>
+                    </div>
+                </fieldset>
+            </div>
+            
+            
+            
+            <div class="quantity">
+                <h2>Количество</h2>
+                <input type="number" value="" placeholder="Количество (шт)">
+            </div>
+
+            
+            <div class="package">
+                
+            </div>
+            
+           
+            <div class="delivery">
+                <h2>Доставка</h2>
+                <fieldset>
+                    <legend>Доставка</legend>
+
+                    <div>
+                        <input type="radio" name="delivery" id="Moscow" value="Moscow" />
+                        <label for="Moscow">Доставка по Москве 800 р (за МКАД расч отдельно)</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" name="delivery" id="PVZ" value="PVZ" />
+                        <label for="PVZ">Доставка до <a href="#" title="Пункты выдачи заказов">ПВЗ</a> бесплатно</label>
+                    </div>
+                </fieldset>
+            </div>
+
+
+
+        </div>
+    </div>
+
+</body>
+    
+    <!-- ДАННЫЕ и построение меню материалов -->
+    <script type="text/javascript" src="DATA/banner/materisl.js"></script>
+    <script type="text/javascript" src="SCRIPT/banner/materisl.js"></script>
+    
+    <!-- ДАННЫЕ и построение меню упаковки -->
+    <script type="text/javascript" src="DATA/banner/package.js"></script>
+    <script type="text/javascript" src="SCRIPT/banner/package.js"></script>
+    
+</html>
