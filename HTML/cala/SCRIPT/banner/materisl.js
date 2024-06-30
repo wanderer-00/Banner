@@ -2,7 +2,7 @@
 var banner_material = document.querySelector('.material');
 
 banner_material.innerHTML = `
-            <h2>Материал</h2>
+            <div class="title">Материал</div>
             <form method="post">
                 <select size="1">${banner_material_build()}</select>
             </form>`;

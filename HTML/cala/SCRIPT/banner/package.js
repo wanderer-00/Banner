@@ -2,7 +2,7 @@
 var banner_package = document.querySelector('.package');
 
 banner_package.innerHTML = `
-            <h2>Упаковка</h2>
+            <div class="title">Упаковка</div>
             <form method="post">
                 <select size="1">${banner_package_build()}</select>
             </form>`;

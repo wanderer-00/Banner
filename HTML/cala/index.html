@@ -3,77 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <title>Баннеры</title>
+    <link rel="stylesheet" href="../new/STYLE/0.css"><!-- Главные стили сайта -->
+    <link rel="stylesheet" href="../new/STYLE/header.css"><!-- HEADER -->
+    <link rel="stylesheet" href="STYLE/view.css"><!-- Окно предпроссмотра -->
+    <link rel="stylesheet" href="STYLE/result.css"><!-- Окно расчёта цены заказа -->
 </head>
 
 <body>
 
     <div class="wrapper">
-        <div class="calc_box">
-            <h1>Баннеры</h1>
-
-
-
-            <div class="material"></div>
-
-
-
-            <div class="size">
-                <h2>Размер</h2>
-                <input type="number" value="" placeholder="Высота (см)">
-                <input type="number" value="" placeholder="Ширина (см)">
-            </div>
-
-
-
-            <div class="quality">
-                <h2>Качество печати</h2>
-                <fieldset>
-                    <legend>Качество печати</legend>
-
-                    <div>
-                        <input type="radio" id="DPI360" name="DPI360" value="360" />
-                        <label for="DPI360">360 DPI</label>
-                    </div>
-
-                    <div>
-                        <input type="radio" id="DPI720" name="DPI720" value="720" />
-                        <label for="DPI720">720 DPI</label>
-                    </div>
-                </fieldset>
-            </div>
+       
+        <style>
+            /* Скрыть input radio */
+            input[type=radio] {
+                width: 0;
+                height: 0;
+                position: absolute;
+                opacity: 0;
+            }
             
+            @media (orientation: portrait) {
+                .wrapper {
+                    width: 100%;
+                    margin: auto;
+                }
+            }
             
+            .calc_box {
+                display: grid;
+                padding: 20px;
+                grid-gap: 20px;
+                grid-template-columns: auto auto 1fr;
+                grid-template-areas: "h1 h1 h1"
+                                     "M  S  V "
+                                     "Q  q  V "
+                                     "P  P  V "
+                                     "D  D  V "
+                                     "R  R  R "
+            }
             
-            <div class="quantity">
-                <h2>Количество</h2>
-                <input type="number" value="" placeholder="Количество (шт)">
-            </div>
-
+            h1 {
+                grid-area: h1
+            }
             
-            <div class="package">
+            .calc_box > :nth-child(2) {grid-area: M}
+            .calc_box > :nth-child(3) {grid-area: S}
+            .calc_box > :nth-child(4) {grid-area: Q}
+            .calc_box > :nth-child(5) {grid-area: q}
+            .calc_box > :nth-child(6) {grid-area: P}
+            .calc_box > :nth-child(7) {grid-area: D}
+            .calc_box > :nth-child(8) {grid-area: V}
+            .calc_box > :nth-child(9) {grid-area: R}
+            
+            .calc_box > .delivery {
+                display: grid;
+                grid-gap: 10px;
+                grid-template-columns: auto auto 1fr;
+                grid-template-areas: "delivery_title delivery_title delivery_title"
+                                     "car            pvz            fire          ";
                 
-            </div>
+            }
             
-           
-            <div class="delivery">
-                <h2>Доставка</h2>
-                <fieldset>
-                    <legend>Доставка</legend>
+            .calc_box > .delivery > :nth-child(1) {grid-area: delivery_title}
+            .calc_box > .delivery > :nth-child(3) {grid-area: car}
+            .calc_box > .delivery > :nth-child(5) {grid-area: pvz}
+            .calc_box > .delivery > :nth-child(7) {grid-area: fire}
+            
+            
+            .calc_box > .delivery > label {
+                width: 60px;
+                padding: 4px;
+                cursor: pointer;
+                aspect-ratio: 1/1;
+                border-radius: 10px;
+                fill: var(--disabled);
+                border: 2px solid var(--disabled);
+            }
+            
+            .calc_box > .delivery > label:last-child {
+                justify-items: center;
+            }
+            
+            
+            input,
+            select,
+            option {
+                font: 600 16px sans-serif;
+                padding: 12px 12px;
+            }
+            
+            .title {
+                color: gray;
+                padding: 10px 0;
+            }
+            
+            .size input {
+                width: 100px;
+            }
+            
+            .quality {
+                display: grid;
+                grid-gap: 0 10px;
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: auto auto;
+                grid-template-areas: "quality_title quality_title"
+                                     "DPI360        DPI720";
+            }
+            .quality label {
+                color: var(--disabled);
+                text-align: center;
+                border-radius: 4px;
+                border: 2px solid var(--disabled);
+                padding: 12px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            
+            input:checked + label {
+                color: var(--main-color);
+                border-color: var(--main-color)
+            }
+            
+            
+            .quality > :nth-child(1) {grid-area: quality_title}
+            .quality > :nth-child(3) {grid-area: DPI360}
+            .quality > :nth-child(5) {grid-area: DPI720}
+            
+            .quantity input {
+                width: 200px;
+            }
 
-                    <div>
-                        <input type="radio" name="delivery" id="Moscow" value="Moscow" />
-                        <label for="Moscow">Доставка по Москве 800 р (за МКАД расч отдельно)</label>
+            
+        </style>
+        
+        <header>
+            <div class="wrapper">
+                <div>
+                    <a class="logo" href="#">
+                        <div class="box"></div>TintPrint
+                    </a>
+                    <div class="city">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill=""><path d="M480.14-490.77q26.71 0 45.59-19.02 18.89-19.02 18.89-45.73 0-26.71-19.03-45.6Q506.57-620 479.86-620q-26.71 0-45.59 19.02-18.89 19.02-18.89 45.73 0 26.71 19.03 45.6 19.02 18.88 45.73 18.88ZM480-119.23Q339-243.92 267.58-351.81q-71.43-107.88-71.43-196.34 0-126.93 82.66-209.39Q361.46-840 480-840q118.54 0 201.19 82.46 82.66 82.46 82.66 209.39 0 88.46-71.43 196.34Q621-243.92 480-119.23Z"/></svg>
+                        Москва
                     </div>
-
-                    <div>
-                        <input type="radio" name="delivery" id="PVZ" value="PVZ" />
-                        <label for="PVZ">Доставка до <a href="#" title="Пункты выдачи заказов">ПВЗ</a> бесплатно</label>
+                    <div class="strt">Ул. Победы,стр. 17</div>
+                    <div class="butn">
+                        <a href="#">
+                            <svg class="icon">
+                                <use xlink:href="#box"></use>
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg class="icon">
+                                <use xlink:href="#buy"></use>
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg class="icon">
+                                <use xlink:href="#boy"></use>
+                            </svg>
+                        </a>
                     </div>
-                </fieldset>
+                </div>
             </div>
 
+            <svg xmlns="http://www.w3.org/2000/svg" display="none">
+                <symbol viewBox="0 -960 960 960" id="box">
+                    <path d="M460-171.46v-297.08L200-619.08v283.23q0 6.16 3.08 11.54 3.07 5.39 9.23 9.23L460-171.46Zm40 0 247.69-143.62q6.16-3.84 9.23-9.23 3.08-5.38 3.08-11.54v-283.23L500-468.54v297.08Zm-52.31 38.92L192.31-279.69q-15.16-8.69-23.73-23.62-8.58-14.92-8.58-32.31v-288.76q0-17.39 8.58-32.31 8.57-14.93 23.73-23.62l255.38-147.15q15.16-8.69 32.31-8.69 17.15 0 32.31 8.69l255.38 147.15q15.16 8.69 23.73 23.62 8.58 14.92 8.58 32.31v288.76q0 17.39-8.58 32.31-8.57 14.93-23.73 23.62L512.31-132.54q-15.16 8.69-32.31 8.69-17.15 0-32.31-8.69ZM628.46-589 737-651.46 492.31-793.08q-6.16-3.84-12.31-3.84t-12.31 3.84l-95.69 55L628.46-589ZM480-502.92l108-62.7-257-148.53-108 62.69 257 148.54Z" />
+                </symbol>
+                <symbol viewBox="0 -960 960 960" id="buy">
+                    <path d="M292.31-115.38q-25.31 0-42.66-17.35-17.34-17.35-17.34-42.65 0-25.31 17.34-42.66 17.35-17.34 42.66-17.34 25.31 0 42.65 17.34 17.35 17.35 17.35 42.66 0 25.3-17.35 42.65-17.34 17.35-42.65 17.35Zm375.38 0q-25.31 0-42.65-17.35-17.35-17.35-17.35-42.65 0-25.31 17.35-42.66 17.34-17.34 42.65-17.34t42.66 17.34q17.34 17.35 17.34 42.66 0 25.3-17.34 42.65-17.35 17.35-42.66 17.35ZM235.23-740 342-515.38h265.38q6.93 0 12.31-3.47 5.39-3.46 9.23-9.61l104.62-190q4.61-8.46.77-15-3.85-6.54-13.08-6.54h-486Zm-19.54-40h520.77q26.08 0 39.23 21.27 13.16 21.27 1.39 43.81l-114.31 208.3q-8.69 14.62-22.58 22.93-13.88 8.31-30.5 8.31H324l-48.62 89.23q-6.15 9.23-.38 20 5.77 10.77 17.31 10.77h435.38v40H292.31q-35 0-52.23-29.5-17.23-29.5-.85-59.27l60.15-107.23L152.31-820H80v-40h97.69l38 80ZM342-515.38h280-280Z" />
+                </symbol>
+                <symbol viewBox="0 -960 960 960" id="boy">
+                    <path d="M480-504.62q-49.5 0-84.75-35.25T360-624.62q0-49.5 35.25-84.75T480-744.62q49.5 0 84.75 35.25T600-624.62q0 49.5-35.25 84.75T480-504.62ZM200-215.38v-65.85q0-24.77 14.42-46.35 14.43-21.57 38.81-33.5 56.62-27.15 113.31-40.73 56.69-13.57 113.46-13.57 56.77 0 113.46 13.57 56.69 13.58 113.31 40.73 24.38 11.93 38.81 33.5Q760-306 760-281.23v65.85H200Zm40-40h480v-25.85q0-13.31-8.58-25-8.57-11.69-23.73-19.77-49.38-23.92-101.83-36.65-52.45-12.73-105.86-12.73t-105.86 12.73Q321.69-349.92 272.31-326q-15.16 8.08-23.73 19.77-8.58 11.69-8.58 25v25.85Zm240-289.24q33 0 56.5-23.5t23.5-56.5q0-33-23.5-56.5t-56.5-23.5q-33 0-56.5 23.5t-23.5 56.5q0 33 23.5 56.5t56.5 23.5Zm0-80Zm0 369.24Z" />
+                </symbol>
+            </svg>
+        </header>
+        
+        
+
+        <div class="wrapper">
+            <div class="calc_box">
+                <h1>Баннеры</h1>
 
 
+
+                <div class="material"></div>
+
+
+
+                <div class="size">
+                    <div class="title">Размер (см)</div>
+                    <input type="number" value="300" placeholder="Высота" min="1" id="height">
+                    <input type="number" value="200" placeholder="Ширина" min="1" id="width">
+                </div>
+
+
+
+                <div class="quality">
+                    <div class="title">Качество печати</div>
+                    <input class="no-select" type="radio" id="DPI360" name="DPI" checked><label for="DPI360">360 DPI</label>
+                    <input class="no-select" type="radio" id="DPI720" name="DPI"><label for="DPI720">720 DPI</label>
+                </div>
+
+
+
+                <div class="quantity">
+                    <div class="title">Количество (шт)</div>
+                    <input type="number" value="" placeholder="Количество">
+                </div>
+
+
+               
+                <div class="package"></div>
+
+
+               
+                <div class="delivery">
+                    <div class="title">Доставка</div>
+                    
+                    <input type="radio" checked id="car" name="delivery">
+                    <label for="car">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M240-160q-50 0-85-35t-35-85H40v-440q0-33 23.5-56.5T120-800h560v160h120l120 160v200h-80q0 50-35 85t-85 35q-50 0-85-35t-35-85H360q0 50-35 85t-85 35Zm0-80q17 0 28.5-11.5T280-280q0-17-11.5-28.5T240-320q-17 0-28.5 11.5T200-280q0 17 11.5 28.5T240-240ZM120-360h32q17-18 39-29t49-11q27 0 49 11t39 29h272v-360H120v360Zm600 120q17 0 28.5-11.5T760-280q0-17-11.5-28.5T720-320q-17 0-28.5 11.5T680-280q0 17 11.5 28.5T720-240Zm-40-200h170l-90-120h-80v120ZM360-540Z"/></svg>
+                    </label>
+                    
+                    <input type="radio" id="pvz" name="delivery">
+                    <label for="pvz">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M160-720v-80h640v80H160Zm0 560v-240h-40v-80l40-200h640l40 200v80h-40v240h-80v-240H560v240H160Zm80-80h240v-160H240v160Zm-38-240h556-556Zm0 0h556l-24-120H226l-24 120Z"/></svg>
+                    </label>
+                    
+                    <input type="checkbox" id="fire">
+                    <label for="fire">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M240-400q0 52 21 98.5t60 81.5q-1-5-1-9v-9q0-32 12-60t35-51l113-111 113 111q23 23 35 51t12 60v9q0 4-1 9 39-35 60-81.5t21-98.5q0-50-18.5-94.5T648-574q-20 13-42 19.5t-45 6.5q-62 0-107.5-41T401-690q-39 33-69 68.5t-50.5 72Q261-513 250.5-475T240-400Zm240 52-57 56q-11 11-17 25t-6 29q0 32 23.5 55t56.5 23q33 0 56.5-23t23.5-55q0-16-6-29.5T537-292l-57-56Zm0-492v132q0 34 23.5 57t57.5 23q18 0 33.5-7.5T622-658l18-22q74 42 117 117t43 163q0 134-93 227T480-80q-134 0-227-93t-93-227q0-129 86.5-245T480-840Z"/></svg>
+                    </label>
+                </div>
+                
+                
+                
+                <div class="view">
+                    <div class="block"></div>
+                </div>
+                
+                <div class="result">
+                    <div>Готовность: </div>
+                    <div>ЦЕНА: </div>
+                    <div>
+                        <div class="no-select">В корзину</div>
+                    </div>
+                    <div>при оформлении заказа сегодня до 16:00</div>
+                </div>
+
+
+
+            </div>
         </div>
     </div>
 
@@ -86,5 +268,21 @@
     <!-- ДАННЫЕ и построение меню упаковки -->
     <script type="text/javascript" src="DATA/banner/package.js"></script>
     <script type="text/javascript" src="SCRIPT/banner/package.js"></script>
+    
+    <!-- Изменение высоты и ширины холста -->
+    <script type="text/jscript" src="SCRIPT/size.js"></script>
+    
+    <!-- Окно предпроссмотра -->
+    <script>
+        var view = document.querySelector('.view');
+        var block = view.children[0];
+
+
+        /* Получение текущей даты */
+        var now = new Date();
+        console.log(`${now.getDate()}.${now.getMonth()}.${now.getFullYear()}`);
+
+
+    </script>
     
 </html>
