@@ -10,7 +10,7 @@
     ;
 }
 
-.services > div {
+.services > a {
     width: 100%;
     height: 100%;
     border-radius: 10px;
@@ -35,20 +35,22 @@
     }
 }
 
-.services > div:nth-child(1) {grid-area: banner}
-.services > div:nth-child(2) {grid-area: sticker}
-.services > div:nth-child(3) {grid-area: portable}
-.services > div:nth-child(4) {grid-area: poster}
-.services > div:nth-child(5) {grid-area: sign}
-.services > div:nth-child(6) {grid-area: cutting}
-.services > div:nth-child(7) {grid-area: milling}
-.services > div:nth-child(8) {grid-area: design}
+.services > :nth-child(1) {grid-area: banner}
+.services > :nth-child(2) {grid-area: sticker}
+.services > :nth-child(3) {grid-area: portable}
+.services > :nth-child(4) {grid-area: poster}
+.services > :nth-child(5) {grid-area: sign}
+.services > :nth-child(6) {grid-area: cutting}
+.services > :nth-child(7) {grid-area: milling}
+.services > :nth-child(8) {grid-area: design}
 
-.services > div:nth-child(1) {background-image: url(../IMG/services/1.jpg)}
-.services > div:nth-child(2) {background-image: url(../IMG/services/2.jpg)}
-.services > div:nth-child(3) {background-image: url(../IMG/services/3.png)}
-.services > div:nth-child(4) {background-image: url(../IMG/services/1.jpg)}
-.services > div:nth-child(5) {background-image: url(../IMG/services/1.jpg)}
-.services > div:nth-child(6) {background-image: url(../IMG/services/1.jpg)}
-.services > div:nth-child(7) {background-image: url(../IMG/services/1.jpg)}
-.services > div:nth-child(8) {background-image: url(../IMG/services/1.jpg)}
+/*
+.services > :nth-child(1) {background-image: url(../IMG/services/1.jpg)}
+.services > :nth-child(2) {background-image: url(../IMG/services/2.jpg)}
+.services > :nth-child(3) {background-image: url(../IMG/services/3.png)}
+.services > :nth-child(4) {background-image: url(../IMG/services/1.jpg)}
+.services > :nth-child(5) {background-image: url(../IMG/services/1.jpg)}
+.services > :nth-child(6) {background-image: url(../IMG/services/1.jpg)}
+.services > :nth-child(7) {background-image: url(../IMG/services/1.jpg)}
+.services > :nth-child(8) {background-image: url(../IMG/services/1.jpg)}
+*/
