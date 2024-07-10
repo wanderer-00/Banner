@@ -1,0 +1,22 @@
+.calc_box > .delivery {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: auto auto 1fr;
+    grid-template-areas: "delivery_title delivery_title delivery_title"
+                         "car            pvz            fire          ";
+
+}
+
+.calc_box > .delivery > :nth-child(1) {grid-area: delivery_title}
+.calc_box > .delivery > :nth-child(3) {grid-area: car}
+.calc_box > .delivery > :nth-child(5) {grid-area: pvz}
+.calc_box > .delivery > :nth-child(7) {grid-area: fire}
+
+
+.calc_box > .delivery > label {
+    width: 60px;
+    padding: 4px;
+    cursor: pointer;
+    aspect-ratio: 1/1;
+    fill: var(--disabled);
+}

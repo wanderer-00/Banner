@@ -1,82 +1,91 @@
 :root {
-    --header-height: 100px;
+    --header-height: 50px;
 }
 
 header {
     width: 100%;
-    border: 1px solid transparent;
+    padding-top: 30px;
+    padding-bottom: 30px;
     -webkit-box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.4);
     -moz-box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.4);
     box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.4);
 }
 
+header > .wrapper {}
+
 header > .wrapper > div {
-    height: 100px;
-    margin: 20px 20px 50px 20px;
-    display: grid;
-    grid-gap: 0 20px;
-    grid-template-columns: auto 1fr auto;
-    grid-template-rows: calc(var(--header-height)/2) calc(var(--header-height)/2);
-    grid-template-areas: "Hlogo Hcity Hbutn"
-                         "Hlogo Hstrt Hbutn";
+    height: var(--wheader-height);
+    justify-items: start;
     align-items: center;
+    display: grid;
+    grid-gap: 0 50px;
+    grid-template-rows: calc(var(--header-height)/2) calc(var(--header-height)/2);
+    grid-template-columns: auto auto 1fr auto;
+    grid-template-areas:
+    "heder_logo heder_mail heder_city heder_butn"
+    "heder_logo heder_tele heder_strt heder_butn"
+    ;
 }
 
+header .logo {grid-area: heder_logo}
+header .mail {grid-area: heder_mail}
+header .tele {grid-area: heder_tele}
+header .city {grid-area: heder_city}
+header .strt {grid-area: heder_strt}
+header .butn {grid-area: heder_butn}
 
+header .logo {
+    display: inline-flex;
+    height: 100%;
+    text-decoration: none;
+    color: var(--color-text);
+    
+}
 
-header .box {
+header .logo > .icon {
     display: inline-flex;
     height: 100%;
     aspect-ratio: 1/1;
     background-image: url('../IMG/header/logo.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
 }
 
+header .logo > .text {
+    font-size: 54px;
+    font-weight: bold;
+}
 
-/* Кнопки: заказы, купить, войти */
+/* Кнопка Войти */
 header .butn {
-    height: 100px;
     display: grid;
-    grid-gap: 20px;
-    grid-area: Hbutn;
-    grid-template-columns: repeat(3, 1fr);
 }
 
 header > .wrapper > div > .butn > a
 {
     aspect-ratio: 1/1;
     text-align: center;
-    border-radius: 6px;
     --butn-height: 60px;
     height: var(--butn-height);
-    background-color: var(--main-color);
     margin: calc( ( var(--header-height) - var(--butn-height) ) / 2 ) 0;
     
     &:hover
     {
-        box-shadow: 0 5px 10px rgba(128,128,128, .75);
+        border-radius: 6px;
+        background-color: lightgray;
     }
 }
 
 header .butn .icon
 {
-    fill: #FFF;
+    fill: var(--color-text);
     height: 100%;
     aspect-ratio: 1/1;
 }
 
-header .logo {
-    height: 100%;
-    grid-area: Hlogo;
-    font-size: 54px;
-    text-decoration: none;
-    color: #000;
-    font-weight: bold;
-}
-
 header .city {
-    grid-area: Hcity;
     font-size: 24px;
-    vertical-align: bottom
 }
 
 header .city > svg {
@@ -84,6 +93,21 @@ header .city > svg {
     fill: var(--main-color);
 }
 
-header .strt {
-    grid-area: Hstrt;
+@media (orientation: portrait) {
+    header > .wrapper > div {
+        grid-gap: 0 20px;
+        grid-template-columns: auto auto 1fr auto;
+        grid-template-areas:
+        "heder_logo heder_mail heder_city heder_butn"
+        "heder_logo heder_tele heder_strt heder_butn"
+        ;
+    }
+    
+    header .city,
+    header .strt,
+    header .logo > .text
+    
+    {
+        display: none;
+    }
 }

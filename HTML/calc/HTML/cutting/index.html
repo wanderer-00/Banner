@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Плоттерная резка</title>
+    <!-- Главные стили сайта -->
+    <link rel="stylesheet" href="../../../new/STYLE/0.css">
+    <!-- HEADER -->
+    <link rel="stylesheet" href="../../../new/STYLE/header.css">
+    <!-- Общие стили -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Предпроссмотр -->
+    <link rel="stylesheet" href="STYLE/view.css">
+    <!-- Чек -->
+    <link rel="stylesheet" href="../../STYLE/result.css">
+</head>
+
+<body>
+
+    <div class="global_wrapper">
+       
+        <style>
+
+            .calc_box {
+                display: grid;
+                padding: 20px;
+                grid-gap: 20px;
+                grid-template-columns: auto auto 1fr;
+                grid-template-areas:
+                " title     title     title  "
+                " material  size      view   "
+                " package   package   view   "
+                " delivery  quantity  view   "
+                " result    result    result "
+                ;
+            }
+            
+            .calc_box > h1        {grid-area: title}
+            .calc_box > .material {grid-area: material}
+            .calc_box > .size     {grid-area: size}
+            .calc_box > .quantity {grid-area: quantity}
+            .calc_box > .package  {grid-area: package}
+            .calc_box > .delivery {grid-area: delivery}
+            .calc_box > .view     {grid-area: view}
+            .calc_box > .result   {grid-area: result}
+            
+            .calc_box > .delivery {
+                display: grid;
+                grid-gap: 10px;
+                grid-template-columns: auto auto 1fr;
+                grid-template-areas: "delivery_title delivery_title delivery_title"
+                                     "car            pvz            fire          ";
+                
+            }
+            
+            .calc_box > .delivery > :nth-child(1) {grid-area: delivery_title}
+            .calc_box > .delivery > :nth-child(3) {grid-area: car}
+            .calc_box > .delivery > :nth-child(5) {grid-area: pvz}
+            .calc_box > .delivery > :nth-child(7) {grid-area: fire}
+            
+            
+            .calc_box > .delivery > label {
+                width: 60px;
+                padding: 4px;
+                cursor: pointer;
+                aspect-ratio: 1/1;
+                fill: var(--disabled);
+            }
+            
+            .calc_box > .delivery > label:last-child {
+                justify-items: center;
+            }
+            
+            
+            input,
+            select,
+            option {
+                font: 600 16px sans-serif;
+                padding: 12px 12px;
+            }
+            
+
+            
+            .size input {
+                width: 100px;
+            }
+            
+            .quality {
+                display: grid;
+                grid-gap: 0 10px;
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: auto auto;
+                grid-template-areas: "quality_title quality_title"
+                                     "DPI360        DPI720";
+            }
+            .quality label {
+                color: var(--disabled);
+                text-align: center;
+                border-radius: 4px;
+                border: 2px solid var(--disabled);
+                padding: 12px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            
+            input:checked + label {
+                color: var(--main-color);
+                fill: var(--main-color);
+                border-color: var(--main-color);
+            }
+            
+            
+            .quality > :nth-child(1) {grid-area: quality_title}
+            .quality > :nth-child(3) {grid-area: DPI360}
+            .quality > :nth-child(5) {grid-area: DPI720}
+            
+            .quantity input {
+                width: 200px;
+            }
+            
+            .button_border {
+                cursor: pointer;
+                border-radius: 10px;
+                border: 2px solid var(--disabled);
+            }
+            
+            .package > div {
+                display: grid;
+                grid-gap: 40px;
+                justify-items: stretch;
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .package > div > label {
+                aspect-ratio: 1/1;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            
+        </style>
+        
+        <header></header>
+        
+        
+
+        <div class="wrapper">
+            <div class="calc_box">
+                <h1>Плоттерная резка</h1>
+
+
+                <!-- Материал -->
+                <div class="material"></div>
+
+
+                <!-- Размер -->
+                <div class="size"></div>
+
+                <!-- Кол-во -->
+                <div class="quantity"></div>
+
+
+                <!-- Упаковка -->
+                <div class="package"></div>
+
+
+                <!-- Доставка -->
+                <div class="delivery"></div>
+
+
+                <!-- Предпроссмотр -->
+                <div class="view">
+                    <div class="block"></div>
+                </div>
+
+
+                <!-- Чек -->
+                <div class="result">
+<!--
+                    <div>Готовность: </div>
+                    <div>ЦЕНА: </div>
+                    <div>
+                        <div class="no-select">В корзину</div>
+                    </div>
+                    <div>при оформлении заказа сегодня до 16:00</div>
+-->
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+    <!-- Header -->
+    <script type="text/javascript" src="../../../new/SCRIPT/header.js"></script>
+
+    <!-- Материал -->
+    <script type="text/javascript" src="DATA/materisl.js"></script>
+    <script type="text/javascript" src="SCRIPT/materisl.js"></script>
+
+    <!-- Размер -->
+    <script type="text/javascript" src="SCRIPT/size.js"></script>
+
+    <!-- Кол-во -->
+    <script type="text/javascript" src="../../JS/quantity.js"></script>
+
+    <!-- Упаковка -->
+    <script type="text/javascript" src="DATA/package.js"></script>
+    <script type="text/javascript" src="SCRIPT/package.js"></script>
+
+    <!-- Доставка -->
+    <script type="text/javascript" src="../../JS/delivery.js"></script>
+
+    <!-- Изменение высоты и ширины холста -->
+    <script type="text/jscript" src="SCRIPT/resize.js"></script>
+
+    <!-- Окно предпроссмотра -->
+    <script type="text/javascript" src="../../JS/view.js"></script>
+    
+    <!-- Чек -->
+    <script type="text/javascript" src="../../JS/result.js"></script>
+
+</html>

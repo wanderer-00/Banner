@@ -1,5 +1,5 @@
 .services {
-    margin: 50px 20px;
+    margin: 50px 0;
     display: grid;
     grid-gap: 20px;
     grid-template-rows: repeat(3, 200px);
@@ -9,6 +9,15 @@
                          "banner banner cutting milling milling  design"
     ;
 }
+
+.services > :nth-child(1) {grid-area: banner}
+.services > :nth-child(2) {grid-area: sticker}
+.services > :nth-child(3) {grid-area: portable}
+.services > :nth-child(4) {grid-area: poster}
+.services > :nth-child(5) {grid-area: sign}
+.services > :nth-child(6) {grid-area: cutting}
+.services > :nth-child(7) {grid-area: milling}
+.services > :nth-child(8) {grid-area: design}
 
 .services > a {
     width: 100%;
@@ -35,14 +44,18 @@
     }
 }
 
-.services > :nth-child(1) {grid-area: banner}
-.services > :nth-child(2) {grid-area: sticker}
-.services > :nth-child(3) {grid-area: portable}
-.services > :nth-child(4) {grid-area: poster}
-.services > :nth-child(5) {grid-area: sign}
-.services > :nth-child(6) {grid-area: cutting}
-.services > :nth-child(7) {grid-area: milling}
-.services > :nth-child(8) {grid-area: design}
+@media (orientation: portrait) {
+    .services {
+        grid-template-rows: repeat(4, 200px);
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "banner sticker"
+            "portable poster"
+            "sign cutting"
+            "milling design"
+        ;
+    }
+}
 
 /*
 .services > :nth-child(1) {background-image: url(../IMG/services/1.jpg)}

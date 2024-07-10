@@ -1,12 +1,19 @@
 .column3 {
     display: grid;
-    padding: 0 20px;
     grid-gap: 40px;
     line-height: 1.5;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas: "a a c q";
 }
+
+/* Волны */
+.parallax > use {fill: var(--color-background)}
+
+.parallax > use:nth-child(1) {opacity: 70%}
+.parallax > use:nth-child(2) {opacity: 50%}
+.parallax > use:nth-child(3) {opacity: 30%}
+.parallax > use:nth-child(4) {opacity: 100%}
 
 
 .column3 div:nth-child(2),
@@ -16,20 +23,6 @@
 .column3 div:nth-child(1) {grid-area: a}
 .column3 div:nth-child(2) {grid-area: c}
 .column3 div:nth-child(3) {grid-area: q}
-
-/*
-.column3 div:nth-child(3) {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.column3 div:nth-child(3) a {
-    padding: 4px 6px;
-    border-radius: 6px;
-    grid-gap: 20px;
-    border: 1px solid var(--main-color);
-}
-*/
 
 footer h2 {
     white-space: nowrap
@@ -47,15 +40,8 @@ footer h2 {
 }
 
 hr {
-    width: calc(100% - 40px);
     margin: 20px auto;
 }
-
-
-
-
-.copyright_links {padding: 0px 20px}
-
 
 .copyright_links {
     display: grid;
@@ -80,10 +66,8 @@ hr {
     border-radius: 4px;
 }
 
+/* Иконки соцсетей */
 #ok {padding: 7px}
-
 #wh {padding: 6px}
-
 #tg {padding: 8px 6px}
-
 #vk {padding: 10px 4px}

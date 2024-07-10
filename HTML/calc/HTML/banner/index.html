@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Баннеры</title>
+    <!-- Главные стили сайта -->
+    <link rel="stylesheet" href="../../../new/STYLE/0.css">
+    <!-- HEADER -->
+    <link rel="stylesheet" href="../../../new/STYLE/header.css">
+    <!-- Общие стили -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Качество -->
+    <link rel="stylesheet" href="../../STYLE/quality.css">
+    <!-- Доставка -->
+    <link rel="stylesheet" href="../../STYLE/delivery.css">
+    <!-- Предпроссмотр -->
+    <link rel="stylesheet" href="STYLE/view.css">
+    <!-- Чек -->
+    <link rel="stylesheet" href="../../STYLE/result.css">
+</head>
+
+<body>
+
+    <div class="global_wrapper">
+       
+        <style>
+
+            .calc_box {
+                display: grid;
+                padding: 20px;
+                grid-gap: 20px;
+                grid-template-columns: auto auto 1fr;
+                grid-template-areas:
+                " title     title     title  "
+                " material  size      view   "
+                " quality   quantity  view   "
+                " package   package   view   "
+                " delivery  delivery  view   "
+                " result    result    result "
+                ;
+            }
+            
+            .calc_box > h1        {grid-area: title}
+            .calc_box > .material {grid-area: material}
+            .calc_box > .size     {grid-area: size}
+            .calc_box > .quality  {grid-area: quality}
+            .calc_box > .quantity {grid-area: quantity}
+            .calc_box > .package  {grid-area: package}
+            .calc_box > .delivery {grid-area: delivery}
+            .calc_box > .view     {grid-area: view}
+            .calc_box > .result   {grid-area: result}
+            
+
+            
+            
+            input,
+            select,
+            option {
+                font: 600 16px sans-serif;
+                padding: 12px 12px;
+            }
+            
+
+            
+
+            
+
+            
+            input:checked + label {
+                color: var(--main-color);
+                fill: var(--main-color);
+                border-color: var(--main-color);
+            }
+            
+            
+            .quality > :nth-child(1) {grid-area: quality_title}
+            .quality > :nth-child(3) {grid-area: DPI360}
+            .quality > :nth-child(5) {grid-area: DPI720}
+            
+            .quantity input {
+                width: 200px;
+            }
+            
+            .button_border {
+                cursor: pointer;
+                border-radius: 10px;
+                border: 2px solid var(--disabled);
+            }
+            
+            .package > div {
+                display: grid;
+                grid-gap: 40px;
+                justify-items: stretch;
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .package > div > label {
+                aspect-ratio: 1/1;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            
+        </style>
+        
+        <header></header>
+        
+        
+
+        <div class="wrapper">
+            <div class="calc_box">
+                <h1>Баннеры</h1>
+
+
+                <!-- Материал -->
+                <div class="material"></div>
+
+
+                <!-- Размер -->
+                <div class="size"></div>
+
+
+                <!-- Качество -->
+                <div class="quality">
+                    <div class="title">Качество печати</div>
+                    <input class="no-select" type="radio" id="DPI360" name="DPI" checked><label for="DPI360">360 DPI</label>
+                    <input class="no-select" type="radio" id="DPI720" name="DPI"><label for="DPI720">720 DPI</label>
+                </div>
+
+
+                <!-- Кол-во -->
+                <div class="quantity"></div>
+
+
+                <!-- Упаковка -->
+                <div class="package"></div>
+
+
+                <!-- Доставка -->
+                <div class="delivery"></div>
+
+
+                <!-- Предпроссмотр -->
+                <div class="view">
+                    <div class="block"></div>
+                </div>
+
+
+                <!-- Чек -->
+                <div class="result"></div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+    <!-- Header -->
+    <script type="text/javascript" src="../../../new/SCRIPT/header.js"></script>
+
+    <!-- Материал -->
+    <script type="text/javascript" src="DATA/material.js"></script>
+    <script type="text/javascript" src="SCRIPT/material.js"></script>
+    
+    <!-- Размер -->
+    <script type="text/javascript" src="SCRIPT/size.js"></script>
+    
+    <!-- Кол-во -->
+    <script type="text/javascript" src="../../JS/quantity.js"></script>
+    
+    <!-- Упаковка -->
+    <script type="text/javascript" src="DATA/package.js"></script>
+    <script type="text/javascript" src="SCRIPT/package.js"></script>
+
+    <!-- Доставка -->
+    <script type="text/javascript" src="../../JS/delivery.js"></script>
+
+    <!-- Окно предпроссмотра -->
+    <script type="text/javascript" src="../../JS/view.js"></script>
+    
+    <!-- Изменение высоты и ширины холста -->
+    <script type="text/jscript" src="SCRIPT/resize.js"></script>
+    
+    <!-- Чек -->
+    <script type="text/javascript" src="../../JS/result.js"></script>
+
+</html>
