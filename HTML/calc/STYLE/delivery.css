@@ -12,6 +12,8 @@
 .calc_box > .delivery > :nth-child(5) {grid-area: pvz}
 .calc_box > .delivery > :nth-child(7) {grid-area: fire}
 
+.calc_box > .delivery > :nth-child(7) {margin-left: 10px;}
+
 
 .calc_box > .delivery > label {
     width: 60px;

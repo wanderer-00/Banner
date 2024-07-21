@@ -9,6 +9,7 @@
 .quality label {
     color: var(--disabled);
     text-align: center;
+    place-content: center;
     border-radius: 4px;
     border: 2px solid var(--disabled);
     padding: 12px;

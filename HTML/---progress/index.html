@@ -39,6 +39,13 @@
         </div>
         
         <style>
+            html,
+            body {
+                padding: 0;
+                margin: 0;
+                width: 100%;
+            }
+            
             .table {
                 width: 100%;
                 display: grid;
@@ -49,6 +56,13 @@
             .table div {
                 padding: 10px;
                 border: 1px solid green;
+            }
+            
+            @media (orientation: portrait){
+                .wrapper {
+                    width: 100%;
+                    padding: 10px;
+                }
             }
         </style>
         
@@ -66,7 +80,7 @@
             <div>c6A4F4HlgClAM5g4</div>
             
             <div>IMG</div>
-            <img margin="auto" src="IMG/cmd.png" alt="">
+            <img margin="auto" width="90%" src="IMG/cmd.png">
         </div>
 
     </div>

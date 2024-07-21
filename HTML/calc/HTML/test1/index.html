@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+ <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <!-- Главные стили сайта -->
+    <link rel="stylesheet" href="../../../new/STYLE/0.css">
+    <!-- HEADER -->
+    <link rel="stylesheet" href="../../../new/STYLE/header.css">
+    <!-- Общие стили -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<style>
+    :root {
+        --title: gray;
+    }
+    
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    div.title {
+        font-family: sans-serif;
+        color: gray;
+    }
+
+    div.box {
+        padding: 10px;
+        margin: 10px 8px;
+        border: 1px solid red;
+    }
+
+
+    /* plusMinus */
+    /* Конструкция */
+    /* Убрать кнопки увеличения и уменьшения в input number */
+    /* Chrome, Safari, Edge, Opera */
+    input.plusMinus::-webkit-outer-spin-button,
+    input.plusMinus::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input.plusMinus {
+        -moz-appearance: textfield;
+    }
+
+    /**************************************************/
+
+    /* Дизайн */
+    input.plusMinus {
+        width: 40px;
+        border: none;
+        padding: 4px;
+        text-align: center;
+        border-bottom: 1px solid black;
+    }
+
+    button {
+        background: none;
+        border: none;
+        color: green;
+        font-size: 1.4em;
+        cursor: pointer;
+        font-family: monospace;
+    }
+
+    /* Размеры */
+    /* Убрать кнопки увеличения и уменьшения в input number */
+    /* Chrome, Safari, Edge, Opera */
+    input.size::-webkit-outer-spin-button,
+    input.size::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input.size {
+        -moz-appearance: textfield;
+    }
+
+    input.size {
+        width: 60px;
+        padding: 4px;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <!-- plusMinus -->
+    <div class="box">
+        <div class="title">количество</div>
+        <div class="element_plusMinus">
+            <button onclick="minus()">-</button>
+            <input class="plusMinus" type="number" placeholder="кол-во" min="1" value="1">
+            <button onclick="plus()">+</button>
+        </div>
+    </div>
+
+
+    <!-- size -->
+    <div class="box">
+        <div class="title">размеры</div>
+        <div class="element_size">
+            <input class="size" type="number" placeholder="ширина">
+            <span>×</span>
+            <input class="size" type="number" placeholder="высота">
+        </div>
+    </div>
+
+
+    <!-- color -->
+    <div class="box">
+        <div class="title">цвет</div>
+        <div class="element_color">
+            <div>
+                <div class="title"><a href="https://www.orafol.com/ru/europe/produkty/oracal-641-economy-cal">Образцы цветов – ORACAL® 641</a></div>
+                <input type="color" list="presetColors">
+                <datalist id="presetColors">
+                    <option>#ff0000</option>
+                    <option>#00ff00</option>
+                    <option>#0000ff</option>
+                </datalist>
+            </div>
+        </div>
+    </div>
+
+    <div class="box">
+        <div class="title">цвет</div>
+
+        <style>
+            .cluster {
+                width: 100%;
+                border: 1px solid;
+                display: grid;
+                grid-gap: 4px;
+                grid-template-columns: repeat(10, 1fr);
+            }
+
+            .cluster>div {
+                aspect-ratio: 1/1;
+                border-radius: 10%;
+                text-align: center;
+                align-content: center;
+                font-weight: bold;
+                font-family: sans-serif;
+                font-size: 2em;
+                color: #FFF;
+                cursor: pointer;
+                -webkit-text-stroke: 1px rgba(0, 0, 0, 1);
+                /* легкая тень вместо обводки */
+            }
+
+            .color_preview {
+                width: 100%;
+                min-height: 200px;
+                border: 1px solid #000;
+                margin-top: 10px;
+                /* текст */
+                text-align: center;
+                align-content: center;
+                font-size: 8em;
+                font-weight: bolder;
+                color: transparent;
+                -webkit-text-stroke: 1px rgba(0, 0, 0, 1);
+            }
+        </style>
+        <input class="clear" onclick="clearF()" type="checkbox">Выборка
+        <input type="checkbox">Монтажка
+        <details>
+            <summary>Выберите цвет</summary>
+            <div class="cluster"></div>
+        </details>
+        <div class="color_preview">SAMPLE</div>
+    </div>
+
+
+
+    <link rel="stylesheet" href="CSS/checkbox_radio.css">
+    <style>
+        .checkbox_radio > div {display: flex}
+    </style>
+    <div class="box checkbox_radio no-select">
+        <div class="title">Radio</div>
+        
+        <div class="title">Group A</div>
+        <div>
+            <input type="radio" id="A1" name="A" checked>
+            <label for="A1">radio 1</label>
+
+            <input type="radio" id="A2" name="A">
+            <label for="A2">radio 2</label>
+
+            <input type="radio" id="A3" name="A">
+            <label for="A3">radio 3</label>
+
+            <input type="radio" id="A4" name="A">
+            <label for="A4">radio 4</label>
+        </div>
+        
+        <div class="title">Group B</div>
+        <div>
+            <input id="B1" name="B" type="checkbox" checked>
+            <label for="B1">checkbox 1</label>
+
+            <input id="B2" name="B" type="checkbox" checked>
+            <label for="B2">checkbox 2</label>
+
+            <input id="B3" name="B" type="checkbox">
+            <label for="B3">checkbox 3</label>
+
+            <input id="B4" name="B" type="checkbox">
+            <label for="B4">checkbox 4</label>
+        </div>
+        
+        <div class="title">Group C</div>
+        <div>
+            <input id="C1" name="C" type="checkbox" checked>
+            <label for="C1">checkbox 1</label>
+
+            <input id="C2" name="C" type="radio" checked>
+            <label for="C2">radio 1</label>
+
+            <input id="C3" name="C" type="checkbox">
+            <label for="C3">checkbox 2</label>
+
+            <input id="C4" name="C" type="radio">
+            <label for="C4">radio 2</label>
+        </div>
+
+    </div>
+
+</body>
+
+<script type="text/javascript" src="js/plusMinus.js"></script>
+<script type="text/javascript" src="data/ORACAL 641.js"></script>
+<script type="text/javascript" src="js/color.js"></script></html>

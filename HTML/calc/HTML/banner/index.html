@@ -28,15 +28,14 @@
             .calc_box {
                 display: grid;
                 padding: 20px;
-                grid-gap: 20px;
-                grid-template-columns: auto auto 1fr;
+                grid-gap: 30px;
+                grid-template-columns: auto auto auto 1fr;
                 grid-template-areas:
-                " title     title     title  "
-                " material  size      view   "
-                " quality   quantity  view   "
-                " package   package   view   "
-                " delivery  delivery  view   "
-                " result    result    result "
+                " title     title     title    title  "
+                " material  size      size     view   "
+                " quality   delivery  delivery view   "
+                " package   package   package  view   "
+                " result    result    result   result "
                 ;
             }
             
@@ -89,7 +88,7 @@
             
             .package > div {
                 display: grid;
-                grid-gap: 40px;
+                grid-gap: 30px;
                 justify-items: stretch;
                 grid-template-columns: repeat(3, 1fr);
             }
@@ -101,14 +100,32 @@
                 background-repeat: no-repeat;
             }
 
-            
+            /* Размеры */
+            /* Убрать кнопки увеличения и уменьшения в input number */
+            /* Chrome, Safari, Edge, Opera */
+            input.size::-webkit-outer-spin-button,
+            input.size::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+
+            /* Firefox */
+            input.size {
+                -moz-appearance: textfield;
+            }
+
+            input.size {
+                padding: 12px;
+                width: 90px;
+                text-align: center;
+            }
         </style>
         
         <header></header>
         
         
 
-        <div class="wrapper">
+        <div class="wrapper no-select">
             <div class="calc_box">
                 <h1>Баннеры</h1>
 
@@ -130,7 +147,7 @@
 
 
                 <!-- Кол-во -->
-                <div class="quantity"></div>
+<!--                <div class="quantity"></div>-->
 
 
                 <!-- Упаковка -->
