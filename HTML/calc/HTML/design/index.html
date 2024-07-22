@@ -25,7 +25,7 @@
                 padding: 20px;
                 grid-gap: 30px;
                 grid-template-rows:  ;
-                grid-template-columns: auto auto 1fr;
+                grid-template-columns: 1fr 1fr 2fr;
                 grid-template-areas:
                     " title    title        title  "
                     " activity requirements view   "
@@ -61,11 +61,13 @@
             
             textarea {
                 padding: 10px;
+                width: 100%;
+                aspect-ratio: 1/0.5;
             }
         </style>
         
         <!-- инициализация header -->
-        <header></header>
+        <header class="shadow"></header>
 
         <div class="wrapper no-select">
             <div class="calc_box">
@@ -77,7 +79,6 @@
                     
                     <textarea
                         rows="10"
-                        cols="30"
                         required
                         placeholder="Опишите тип деятельности компании, например:&#10;&#10;Наша компания занимается оформлением детских праздников, мы ассоциируеся с рабостью, весельем и яркостью"
                     ></textarea>
@@ -130,7 +131,7 @@
                         <label for="b2">Отрисовать</label>
 
                         <input id="b3" name="b" type="radio">
-                        <label for="b3" style="position: relative">Разработать нам<div style="position: absolute; right: 140px; top: 50px;">↓</div></label>
+                        <label for="b3">Разработать нам</label>
                     </div>
                 </div>
                 
@@ -147,7 +148,7 @@
                 </div>
 
                 <!-- предпроссмотр -->
-                <div class="view">
+                <div class="view shadow">
                     <div class="block"></div>
                 </div>
 
@@ -158,12 +159,14 @@
         </div>
         
         <footer>
-            <ul>
-                <li>Додизайнить drop файлов</li>
-                <li>Сделать предпроссмотр стилей</li>
-                <li>Спросить про расчёт цены</li>
-                <li>Мобильная версия</li>
-            </ul>
+            <div class="wrapper">
+                <ul>
+                    <li>Додизайнить drop файлов</li>
+                    <li>Сделать предпроссмотр стилей</li>
+                    <li>Спросить про расчёт цены</li>
+                    <li>Мобильная версия</li>
+                </ul>
+            </div>
         </footer>
         
     </div>

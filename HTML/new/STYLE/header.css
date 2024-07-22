@@ -6,9 +6,6 @@ header {
     width: 100%;
     padding-top: 30px;
     padding-bottom: 30px;
-    -webkit-box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.4);
-    -moz-box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.4);
-    box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.4);
 }
 
 header > .wrapper {}
