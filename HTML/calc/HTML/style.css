@@ -19,9 +19,3 @@ input[type=checkbox]{
     color: gray;
     padding: 10px 0;
 }
-
-.shadow {
-    -webkit-box-shadow: 0px 0px 8px 0px rgba(120, 120, 120, 0.4);
-    -moz-box-shadow: 0px 0px 8px 0px rgba(120, 120, 120, 0.4);
-    box-shadow: 0px 0px 8px 0px rgba(120, 120, 120, 0.4);
-}

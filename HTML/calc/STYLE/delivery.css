@@ -22,3 +22,7 @@
     aspect-ratio: 1/1;
     fill: var(--disabled);
 }
+
+svg + input:checked {
+    fill: red;
+}
