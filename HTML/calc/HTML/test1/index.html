@@ -14,6 +14,12 @@
 <style>
     :root {
         --title: gray;
+        
+        --padding: 20px;
+    }
+    
+    * {
+        font-family: sans-serif;
     }
     
     body {
@@ -24,12 +30,13 @@
     div.title {
         font-family: sans-serif;
         color: gray;
+        padding:  var(--padding) var(--padding) 0 var(--padding);
     }
 
     div.box {
-        padding: 10px;
-        margin: 10px 8px;
-        border: 1px solid red;
+        padding: var(--padding);
+        margin: var(--padding);
+        border: 1px solid lightgray;
     }
 
 
@@ -87,12 +94,19 @@
         padding: 4px;
         text-align: center;
     }
+    
+    
+    hr {
+        margin: 20px 0;
+        border: 0;
+        border-bottom: 1px solid lightgray;
+    }
 </style>
 
 <body>
     <!-- plusMinus -->
+    <div class="title"><b>Количество</b></div>
     <div class="box">
-        <div class="title">количество</div>
         <div class="element_plusMinus">
             <button onclick="minus()">-</button>
             <input class="plusMinus" type="number" placeholder="кол-во" min="1" value="1">
@@ -102,8 +116,8 @@
 
 
     <!-- size -->
+    <div class="title"><b>Размеры</b></div>
     <div class="box">
-        <div class="title">размеры</div>
         <div class="element_size">
             <input class="size" type="number" placeholder="ширина">
             <span>×</span>
@@ -113,6 +127,7 @@
 
 
     <!-- color -->
+<!--
     <div class="box">
         <div class="title">цвет</div>
         <div class="element_color">
@@ -127,7 +142,9 @@
             </div>
         </div>
     </div>
+-->
 
+<!--
     <div class="box">
         <div class="title">цвет</div>
 
@@ -176,6 +193,7 @@
         </details>
         <div class="color_preview">SAMPLE</div>
     </div>
+-->
 
 
 
@@ -183,10 +201,10 @@
     <style>
         .checkbox_radio > div {display: flex}
     </style>
+    
+    <div class="title"><b>Radio</b></div>
     <div class="box checkbox_radio no-select">
-        <div class="title">Radio</div>
         
-        <div class="title">Group A</div>
         <div>
             <input type="radio" id="A1" name="A" checked>
             <label for="A1">radio 1</label>
@@ -201,7 +219,8 @@
             <label for="A4">radio 4</label>
         </div>
         
-        <div class="title">Group B</div>
+        <hr>
+        
         <div>
             <input id="B1" name="B" type="checkbox" checked>
             <label for="B1">checkbox 1</label>
@@ -216,7 +235,8 @@
             <label for="B4">checkbox 4</label>
         </div>
         
-        <div class="title">Group C</div>
+        <hr>
+        
         <div>
             <input id="C1" name="C" type="checkbox" checked>
             <label for="C1">checkbox 1</label>
@@ -231,6 +251,18 @@
             <label for="C4">radio 2</label>
         </div>
 
+    </div>
+    
+    
+    <!-- Drag-and-drop -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/drag_and_drop.css">
+    <div class="title"><b>Drag-and-drop</b></div>
+    <div class="box">
+        <div class="drag_and_drop">
+            <input type="file">
+        </div>
+        <img src="img/ref.png" alt="">
     </div>
 
 </body>
